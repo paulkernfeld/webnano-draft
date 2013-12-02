@@ -1,0 +1,28 @@
+{ 
+  "manifest_version": 2,
+
+  "name": "CatBlock",
+  "version": "1.0",
+  "description": "I can't has cheezburger!",
+  "permissions": [
+    "webRequest",
+//    "webRequestBlocking",
+    "storage",
+    "<all_urls>"
+  ],
+   "page_action": {
+     "default_icon": {                    // optional
+       "19": "icon.png"           // optiona
+     },
+     "default_title": "FHDSU",      // optional; shown in tooltip
+     "default_popup": "popup.html"        // optional
+   },
+  // todo: use event pages? does this even save power cause i don't use chrome's page matching functionality
+  "background": {
+    "scripts": ["jquery.js", "background.js"]
+  }//,
+  // "browser_action": {
+  //   "default_icon": "icon.png",
+  //   "default_popup": "browserPopup.html"
+  // }
+}
