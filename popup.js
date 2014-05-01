@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
         
         console.log('gonna make a client');
         
+        // TODO make a config
         var nanoClient = new rpcClient({
           rpc: {
             'host': 'localhost',
@@ -31,16 +32,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
         console.log('made a client');
 
-        nanoClient.getAccount('add', 'private', function(err, account) {
+        // TODO make this a config
+        var address = 'n4azoZaLB2YXo5EH4oXAYbQGA3h4di2Zsz';
+        var privateKey = 'cSxQsUNZLcHyiqP4h35wczxm6nTwWQmkQJWe9hxGJYwhhgHJZD4N';
+          
+        nanoClient.getAccount(address, privateKey, function(err, account) {
           if (err) {
             console.log(err);
             return;
           }
 
           console.log('got account', account);
+          console.log('Payment info:', value.singleton);
           account.createVoucher(value.singleton.destinationAddress, value.singleton.targetSerialized, function(err, transactionHex) {
             if (err) {
-              console.log(err);
+              console.log('Error creating voucher', err);
               return;
             }
             console.log(transactionHex);

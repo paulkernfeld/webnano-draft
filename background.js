@@ -55,8 +55,10 @@ chrome.webRequest.onHeadersReceived.addListener(
     }
 
     var destinationAddress = headers['Payment-Destination-Address'];
+    // TODO verify destinationAddress
 
     var targetSerialized = headers['Payment-Target'];
+    // TODO verify targetSerialized
 
     if (info.type != 'main_frame') {
       showError("this extension doesn't support paying for embedded content or ajax requests yet");

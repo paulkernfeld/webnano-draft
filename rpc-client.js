@@ -20,7 +20,7 @@ define(["./jayson-full"], function (jaysonDoesntReturnAnything) {
             cb(error);
             return;
           }
-          cb(error, response);
+          cb(null, response);
         });
       };
 
@@ -35,7 +35,7 @@ define(["./jayson-full"], function (jaysonDoesntReturnAnything) {
             cb(error);
             return;
           }
-          cb(error, response);
+          cb(null, response);
         });
       };
 
@@ -50,7 +50,7 @@ define(["./jayson-full"], function (jaysonDoesntReturnAnything) {
             cb(error);
             return;
           }
-          cb(error, response);
+          cb(null, response);
         });
       };
     };
